@@ -1,0 +1,9 @@
+@if (authFacade.isLoading()) {
+    <p>Loading...</p>
+  }
+  <button class="" (click)="login()" [disabled]="authFacade.isLoading()">Sign In</button>
+
+
+  @if (authFacade.isLogged()) {
+      <p>{{authFacade.getCurrentUserId()}}</p>   
+  }
