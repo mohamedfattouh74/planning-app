@@ -1,6 +1,6 @@
 <div 
   cdkDropListGroup
-  class="flex overflow-x-auto pb-4 gap-4 scrollbar-hide"
+  class="flex pt-12 justify-center pb-4 gap-4 scrollbar-hide"
 >
   @for (column of boardsFacade.boards()[0].columns; track column.id; let i = $index) {
     <app-board-column 

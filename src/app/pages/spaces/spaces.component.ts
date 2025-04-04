@@ -34,5 +34,8 @@ export class SpacesComponent {
         event.currentIndex
       );
     }
+
+    console.log(event);
+    console.log(this.boardsFacade.boards())
   }
 }
