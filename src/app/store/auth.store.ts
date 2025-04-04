@@ -1,6 +1,6 @@
-import { computed, inject } from "@angular/core";
+import { computed, effect, inject } from "@angular/core";
 import { User } from "../interfaces/user"
-import {patchState, signalStore , withComputed, withMethods, withState} from '@ngrx/signals'
+import {getState, patchState, signalStore , withComputed, withHooks, withMethods, withProps, withState} from '@ngrx/signals'
 import { AuthService } from "../services/auth.service";
 import { rxMethod } from '@ngrx/signals/rxjs-interop';
 import { pipe, switchMap, tap } from "rxjs";
@@ -27,7 +27,11 @@ export const AuthStore = signalStore(
     { providedIn: 'root' },
     withState(initialState),
     withComputed((store)=>({})),
-    withMethods((store, authService = inject(AuthService), router = inject(Router))=>({
+    withProps(()=>({
+        authService : inject(AuthService),
+        router : inject(Router)
+    })),
+    withMethods(({ authService, router , ...store})=>({
         login: rxMethod<User>(
             pipe(
                 tap(()=>patchState(store,{isLoading:true , error: null})),
@@ -49,5 +53,5 @@ export const AuthStore = signalStore(
             patchState(store, initialState);
             router.navigate(['/login']);
           }
-    })
-))
+    })),
+)
