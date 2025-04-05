@@ -546,7 +546,14 @@
         {
           "id": "col-1743873995914-1",
           "title": "To Do",
-          "tasks": []
+          "tasks": [
+            {
+              "id": "task-1743879221514",
+              "title": "Study Fundamentals of node.js",
+              "dueDate": "2025-04-30",
+              "priority": "high"
+            }
+          ]
         },
         {
           "id": "col-1743873995914-2",
