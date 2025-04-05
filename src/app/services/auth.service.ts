@@ -17,10 +17,7 @@ export class AuthService {
   constructor(private httpClient:HttpClient) {}
 
   register(userDto: User) {
-    this.httpClient.post<AuthResponse>(this.baseUrl + 'users', userDto)
-    .subscribe((res: AuthResponse) => {
-      localStorage.setItem('access_token', res.accessToken);
-    });
+    return this.httpClient.post<AuthResponse>(this.baseUrl + 'users', userDto);
   }
 
   login(userDto: User) {

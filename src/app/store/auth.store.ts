@@ -41,10 +41,26 @@ export const AuthStore = signalStore(
                             localStorage.setItem('access_token', res.accessToken);
                             const userId = authService.getUserIdFromToken(res.accessToken);
                             patchState(store, {isLogged: true, isLoading: false, user:  credentials, userId})
-                            router.navigate(['/spaces']);
+                            router.navigate(['/boards']);
 
                         },  
                         error: () => { patchState(store, {isLoading: false, isLogged: false, error:'Invalid Credentials'})},                    })
+                ))
+            )
+        ),
+        register: rxMethod<User>(
+            pipe(
+                tap(()=>patchState(store,{isLoading:true , error: null})),
+                switchMap(credentials=> authService.register(credentials).pipe(
+                    tap({
+                        next: (res) =>{
+                            patchState(store, {isLoading: false, user:  credentials})
+                            router.navigate(['/login']);
+                        },
+                        error: (err) =>{
+                            patchState(store, {isLoading:false, error: err})
+                        }
+                    })
                 ))
             )
         ),

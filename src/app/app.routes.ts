@@ -1,14 +1,14 @@
 import { Routes } from '@angular/router';
-import { SpacesComponent } from './pages/spaces/spaces.component';
+import { BoardsComponent } from './pages/boards/boards.component';
 import { LoginComponent } from './pages/login/login.component';
 import { authGuard } from './guards/auth.guard';
 import { LayoutComponent } from './pages/layout/layout.component';
+import { SignupComponent } from './pages/signup/signup.component';
 
 export const routes: Routes = [
     {path:'login', component: LoginComponent},
-    {path :'', component :LayoutComponent, children:[
-        { path:'spaces', component: SpacesComponent, canActivate:[authGuard]},
+    { path: 'signup', component: SignupComponent },
+    {path :'', component : LayoutComponent, children:[
+        { path:'boards', component: BoardsComponent, canActivate:[authGuard]},
     ]},
-    {path:'spaces', component: SpacesComponent, canActivate:[authGuard]},
-    {path:'', redirectTo:'login', pathMatch:'full'},
 ];

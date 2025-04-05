@@ -1,5 +1,5 @@
 import { patchState, signalStore, withComputed, withMethods, withState } from "@ngrx/signals";
-import { Board } from "../interfaces/board"
+import { Board, CreateBoard } from "../interfaces/board"
 import { computed, inject } from "@angular/core";
 import { rxMethod } from "@ngrx/signals/rxjs-interop";
 import { pipe, switchMap, tap } from "rxjs";
@@ -36,6 +36,19 @@ export const BoardStore = signalStore(
                             patchState(store, {boards: res, isLoading: false, })
                         },  
                         error: () => { patchState(store, {isLoading: false, error:'Failed to fetch boards '})},
+                        })
+                ))
+            )
+        ),
+        createBoard: rxMethod<{userId:string, board:CreateBoard}>(
+            pipe(
+                tap(()=>patchState(store,{isLoading:true , error: null})),
+                switchMap(({userId,board}) => boardService.createBoard(userId,board ).pipe(
+                    tap({
+                        next: (res)=> {
+                            patchState(store, {boards: [...store.boards(), res] , isLoading: false, })
+                        },  
+                        error: () => { patchState(store, {isLoading: false, error:'Failed to create board '})},
                         })
                 ))
             )

@@ -1,0 +1,48 @@
+<div class="board-selector mb-6">
+  <div class="flex items-center justify-between border-b border-gray-200 py-4 px-4">
+    <h2 class="text-lg font-semibold text-gray-900 dark:text-gray-200">My Boards</h2>
+    <button 
+      (click)="addNewBoard()"
+      class="flex items-center gap-1.5 px-3 py-1.5 cursor-pointer text-sm font-medium rounded-md bg-sky-600 text-white hover:bg-sky-700 transition-colors"
+    >
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
+      </svg>
+      Add Board
+    </button>
+  </div>
+
+  <div class="flex gap-2 m-4 overflow-x-auto pb-2 scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100">
+    @for (board of boardsFacade.boards(); track board.id) {
+      <button 
+        (click)="boardsFacade.selectBoard(board)"
+        [class.bg-sky-600]="(boardsFacade.selectedBoard()?.id === board.id)"
+        [class.text-white]="(boardsFacade.selectedBoard()?.id === board.id)"
+        [class.bg-gray-100]="(boardsFacade.selectedBoard()?.id !== board.id)"
+        class="px-4 py-2 rounded-md text-sm font-medium hover:bg-sky-600 hover:text-white transition-colors whitespace-nowrap"
+      >
+        {{ board.title }}
+      </button>
+    }
+  </div>
+</div>
+
+@if (boardsFacade.selectedBoard(); as selectedBoard) {
+  <div cdkDropListGroup class="flex pt-2 justify-center pb-4 gap-14 overflow-x-auto scrollbar-hide">
+    @for (column of selectedBoard.columns; track column.id; let i = $index) {
+      <app-board-column 
+        [column]="column"
+        [columnIndex]="i"
+        (dropped)="onColumnDrop($event, i)"
+      ></app-board-column>
+    }
+  </div>
+} @else {
+  <div class="text-center py-12 text-gray-500">
+    <svg class="mx-auto h-12 w-12 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 17V7m0 10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h2a2 2 0 012 2m0 10a2 2 0 002 2h2a2 2 0 002-2M9 7a2 2 0 012-2h2a2 2 0 012 2m0 10V7m0 10a2 2 0 002 2h2a2 2 0 002-2V7a2 2 0 00-2-2h-2a2 2 0 00-2 2"></path>
+    </svg>
+    <h3 class="mt-2 text-sm font-medium">No board selected</h3>
+    <p class="mt-1 text-sm">Select a board or create a new one to get started</p>
+  </div>
+}

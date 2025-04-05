@@ -4,6 +4,9 @@
 html, body { height: 100%; width: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
+@custom-variant dark (&:where(.dark, .dark *));
+
+
 /* Drag preview styling */
 .cdk-drag-preview {
     @apply bg-white dark:bg-gray-700 shadow-lg rounded border border-gray-200 dark:border-gray-600 opacity-90;

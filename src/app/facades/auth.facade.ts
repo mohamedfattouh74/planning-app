@@ -17,6 +17,10 @@ export class AuthFacade {
     return this._store.login(credentials);
   }
 
+  register(credentials: User) {
+    return this._store.register(credentials);
+  }
+
   logout() {
     return this._store.logout();
   }

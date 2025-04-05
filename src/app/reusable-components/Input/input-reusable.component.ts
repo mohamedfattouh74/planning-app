@@ -20,6 +20,8 @@ export class InputComponent implements ControlValueAccessor{
 
   @Input() inputType:string ='text';
   @Input() placeholder:string ='Enter value for field';
+  @Input({required:true}) labelText: string = '';
+  @Input({required:true}) labelFor: string= ''
 
   constructor(private cdr: ChangeDetectorRef) {}
 
