@@ -43,7 +43,7 @@
           "tasks": [
             {
               "id": "task1",
-              "content": "Design homepage mockup",
+              "title": "Design homepage mockup",
               "dueDate": "2023-12-15",
               "priority": "high",
               "labels": [
@@ -58,7 +58,7 @@
             },
             {
               "id": "task2",
-              "content": "Write project proposal",
+              "title": "Write project proposal",
               "dueDate": "2023-12-05",
               "priority": "medium",
               "labels": [
@@ -78,7 +78,7 @@
           "tasks": [
             {
               "id": "task3",
-              "content": "API integration",
+              "title": "API integration",
               "dueDate": "2023-12-10",
               "priority": "high",
               "labels": [
@@ -93,7 +93,7 @@
             },
             {
               "id": "task4",
-              "content": "Database schema design",
+              "title": "Database schema design",
               "dueDate": "2023-12-08",
               "priority": "medium",
               "labels": [
@@ -113,7 +113,7 @@
           "tasks": [
             {
               "id": "task5",
-              "content": "Project kickoff meeting",
+              "title": "Project kickoff meeting",
               "dueDate": "2023-11-05",
               "priority": "low",
               "completed": true,
@@ -142,7 +142,7 @@
           "tasks": [
             {
               "id": "task6",
-              "content": "Grocery shopping",
+              "title": "Grocery shopping",
               "dueDate": "2023-12-03",
               "priority": "medium",
               "labels": [
@@ -156,7 +156,7 @@
             },
             {
               "id": "task7",
-              "content": "Book dentist appointment",
+              "title": "Book dentist appointment",
               "dueDate": "2023-12-10",
               "priority": "high",
               "labels": [
@@ -176,7 +176,7 @@
           "tasks": [
             {
               "id": "task8",
-              "content": "Renew car insurance",
+              "title": "Renew car insurance",
               "dueDate": "2023-12-15",
               "priority": "high",
               "labels": [
@@ -196,7 +196,7 @@
           "tasks": [
             {
               "id": "task9",
-              "content": "Pay electricity bill",
+              "title": "Pay electricity bill",
               "dueDate": "2023-11-25",
               "priority": "medium",
               "completed": true,
@@ -212,7 +212,7 @@
             },
             {
               "id": "task10",
-              "content": "Clean garage",
+              "title": "Clean garage",
               "dueDate": "2023-11-20",
               "priority": "low",
               "completed": true,
@@ -241,7 +241,7 @@
           "tasks": [
             {
               "id": "task11",
-              "content": "Setup project repository",
+              "title": "Setup project repository",
               "dueDate": "2024-02-20",
               "priority": "high",
               "labels": [
@@ -256,7 +256,7 @@
             },
             {
               "id": "task12",
-              "content": "Create wireframes",
+              "title": "Create wireframes",
               "dueDate": "2024-02-25",
               "priority": "medium",
               "labels": [
@@ -267,6 +267,12 @@
                 "createdBy": 3,
                 "lastUpdated": "2024-02-08"
               }
+            },
+            {
+              "id": "task-1743878727925",
+              "title": "Setup Git",
+              "dueDate": "2025-04-16",
+              "priority": "medium"
             }
           ]
         },
@@ -276,7 +282,7 @@
           "tasks": [
             {
               "id": "task13",
-              "content": "Implement auth service",
+              "title": "Implement auth service",
               "dueDate": "2024-02-18",
               "priority": "high",
               "labels": [
@@ -291,7 +297,7 @@
             },
             {
               "id": "task14",
-              "content": "Design database schema",
+              "title": "Design database schema",
               "dueDate": "2024-02-22",
               "priority": "medium",
               "labels": [
@@ -302,6 +308,12 @@
                 "createdBy": 3,
                 "lastUpdated": "2024-02-10"
               }
+            },
+            {
+              "id": "task-1743878972060",
+              "title": "Implement State Management",
+              "dueDate": "2025-04-30",
+              "priority": "medium"
             }
           ]
         },
@@ -311,7 +323,7 @@
           "tasks": [
             {
               "id": "task15",
-              "content": "Project planning",
+              "title": "Project planning",
               "dueDate": "2024-02-10",
               "priority": "low",
               "completed": true,
@@ -340,7 +352,7 @@
           "tasks": [
             {
               "id": "task16",
-              "content": "Research UI frameworks",
+              "title": "Research UI frameworks",
               "dueDate": "2024-03-01",
               "priority": "medium",
               "labels": [
@@ -354,7 +366,7 @@
             },
             {
               "id": "task17",
-              "content": "Create project timeline",
+              "title": "Create project timeline",
               "dueDate": "2024-02-28",
               "priority": "high",
               "labels": [
@@ -374,7 +386,7 @@
           "tasks": [
             {
               "id": "task18",
-              "content": "Build splash screen",
+              "title": "Build splash screen",
               "dueDate": "2024-02-28",
               "priority": "high",
               "labels": [
@@ -388,7 +400,7 @@
             },
             {
               "id": "task19",
-              "content": "Setup Firebase",
+              "title": "Setup Firebase",
               "dueDate": "2024-03-05",
               "priority": "medium",
               "labels": [
@@ -408,7 +420,7 @@
           "tasks": [
             {
               "id": "task20",
-              "content": "App concept approval",
+              "title": "App concept approval",
               "dueDate": "2024-02-15",
               "priority": "low",
               "completed": true,
@@ -437,7 +449,7 @@
           "tasks": [
             {
               "id": "task21",
-              "content": "Advanced NgRx",
+              "title": "Advanced NgRx",
               "dueDate": "2024-03-15",
               "priority": "high",
               "labels": [
@@ -451,7 +463,7 @@
             },
             {
               "id": "task22",
-              "content": "Docker deployment",
+              "title": "Docker deployment",
               "dueDate": "2024-03-20",
               "priority": "medium",
               "labels": [
@@ -471,7 +483,7 @@
           "tasks": [
             {
               "id": "task23",
-              "content": "Angular Signals",
+              "title": "Angular Signals",
               "dueDate": "2024-02-29",
               "priority": "high",
               "completed": true,
@@ -493,7 +505,7 @@
           "tasks": [
             {
               "id": "task24",
-              "content": "RxJS Fundamentals",
+              "title": "RxJS Fundamentals",
               "dueDate": "2024-02-10",
               "priority": "medium",
               "completed": true,
@@ -509,7 +521,7 @@
             },
             {
               "id": "task25",
-              "content": "TypeScript Advanced",
+              "title": "TypeScript Advanced",
               "dueDate": "2024-01-30",
               "priority": "medium",
               "completed": true,

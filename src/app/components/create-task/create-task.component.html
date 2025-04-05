@@ -1,1 +1,34 @@
-<p>create-task works!</p>
+<form class="p-4 bg-white dark:bg-gray-700" [formGroup]="taskForm" (ngSubmit)="createTask()">
+    <h5 class="text-xl font-medium text-gray-900 dark:text-white">Create a new task</h5>
+    <div class="my-4">
+        <input-reusable
+        [labelText]="'Task Title'" 
+        [labelFor]="'title'" 
+        inputType="text" 
+        [placeholder]="'Studying Chapter 1 in Effective Angular'" 
+        formControlName="title"
+        />
+    </div>
+    <div>
+        <dynamic-select [options]="priorityOptions" formControlName="priority" [labelFor]="'priority'" [labelText]="'Task Priority'"></dynamic-select>
+    </div>
+    <div class="my-4">
+        <input-reusable
+        [labelText]="'Due Date'" 
+        [labelFor]="'date'" 
+        inputType="date" 
+        [placeholder]="'2025-06-01'" 
+        formControlName="date"
+        />
+    </div>
+    <button 
+    [disabled]=" taskForm.invalid" 
+    type="submit" 
+    class="w-20 mt-4 text-white bg-sky-800
+     hover:bg-sky-900 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg 
+     text-sm px-5 py-2.5 text-center dark:bg-sky-600 dark:hover:bg-sky-700 dark:focus:ring-sky-800
+    disabled:bg-gray-400 disabled:hover:bg-gray-400">
+    Create
+    </button>
+</form>
+    

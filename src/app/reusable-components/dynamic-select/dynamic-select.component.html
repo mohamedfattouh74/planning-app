@@ -1,0 +1,12 @@
+<label [htmlFor]="labelFor" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">{{labelText}}</label>
+
+<select
+    class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none text-gray-900"
+    [value]="selectedValue"
+    (change)="onValueChange($event)"
+>
+    <option hidden value="">Select a value</option>
+    @for (option of options; track option) {
+        <option [value]="option">{{ option }}</option>
+    }
+</select>

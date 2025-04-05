@@ -23,4 +23,8 @@ export class BoardsService{
         return this.httpClient.post<Board>(`${this.baseUrl}boards`, boardWithUser);
     }
 
+    updateBoard(board: Board){
+        return this.httpClient.put<Board>(`${this.baseUrl}boards/${board.id}`, board);
+    }
+
 }

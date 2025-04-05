@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { BoardsFacade } from '../../facades/boards.facade';
 import {CdkDragDrop, DragDropModule, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
 import { BoardColumnComponent } from '../../components/board-column/board-column.component';
-import {Dialog, DIALOG_DATA, DialogModule} from '@angular/cdk/dialog';
+import {Dialog, DialogModule} from '@angular/cdk/dialog';
 import { CreateBoardComponent } from '../../components/create-board/create-board.component';
 
 

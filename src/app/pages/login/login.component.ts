@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { AuthFacade } from '../../facades/auth.facade';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
-import { InputComponent } from "../../reusable-components/Input/input-reusable.component";
+import { InputComponent } from "../../reusable-components/input-reusable/input-reusable.component";
 import { RouterModule } from '@angular/router';
 
 @Component({

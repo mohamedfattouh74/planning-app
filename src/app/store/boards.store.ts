@@ -5,6 +5,7 @@ import { rxMethod } from "@ngrx/signals/rxjs-interop";
 import { pipe, switchMap, tap } from "rxjs";
 import { BoardsService } from "../services/boards.service";
 import { AuthFacade } from "../facades/auth.facade";
+import { Task } from "../interfaces/task";
 
 type BoardState = {
     boards: Board[],
@@ -49,6 +50,21 @@ export const BoardStore = signalStore(
                             patchState(store, {boards: [...store.boards(), res] , isLoading: false, })
                         },  
                         error: () => { patchState(store, {isLoading: false, error:'Failed to create board '})},
+                        })
+                ))
+            )
+        ),
+        updateBoard:rxMethod<{updatedBoard:Board}>(
+            pipe(
+                tap(()=>patchState(store,{isLoading:true , error: null})),
+                switchMap(({updatedBoard}) => boardService.updateBoard(updatedBoard).pipe(
+                    tap({
+                        
+                        next: (res)=> {
+                            patchState(store, {boards: store.boards().map(board=> board.id == updatedBoard.id? updatedBoard: board) 
+                            , isLoading: false, })
+                        },  
+                        error: () => { patchState(store, {isLoading: false, error:'Failed to update board '})},
                         })
                 ))
             )

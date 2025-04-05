@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
-import { InputComponent } from "../../reusable-components/Input/input-reusable.component";
+import { InputComponent } from "../../reusable-components/input-reusable/input-reusable.component";
 import { AuthFacade } from '../../facades/auth.facade';
 import { RouterModule } from '@angular/router';
 import { passwordMatchValidator } from '../../form-validators/password-match.validator';

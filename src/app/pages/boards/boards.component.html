@@ -31,6 +31,7 @@
   <div cdkDropListGroup class="flex pt-2 justify-center pb-4 gap-14 overflow-x-auto scrollbar-hide">
     @for (column of selectedBoard.columns; track column.id; let i = $index) {
       <app-board-column 
+        [boardId]="selectedBoard.id"
         [column]="column"
         [columnIndex]="i"
         (dropped)="onColumnDrop($event, i)"

@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
-import { InputComponent } from "../../reusable-components/Input/input-reusable.component";
+import { InputComponent } from "../../reusable-components/input-reusable/input-reusable.component";
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { BoardsFacade } from '../../facades/boards.facade';
 import { AuthFacade } from '../../facades/auth.facade';
@@ -17,7 +17,7 @@ export class CreateBoardComponent {
 
   boardFacade = inject(BoardsFacade);
   authFacade = inject(AuthFacade);
-   dialogRef = inject (DialogRef);
+  dialogRef = inject (DialogRef);
 
   boardForm = new FormGroup({
     title: new FormControl('', Validators.required)
@@ -25,7 +25,7 @@ export class CreateBoardComponent {
 
   createBoard(){
     if(this.boardForm.valid && this.boardForm.value.title){
-      
+
       const board: CreateBoard = {
         title  :this.boardForm.value.title,
         userId : this.authFacade.getCurrentUserId(),

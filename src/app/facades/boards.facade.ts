@@ -24,4 +24,8 @@ export class BoardsFacade {
   selectBoard(selectedBoard: Board){
     this._store.selectBoard(selectedBoard.id);
   }
+
+  updateBoard(updatedBoard: Board){
+    this._store.updateBoard({updatedBoard});
+  }
 }
